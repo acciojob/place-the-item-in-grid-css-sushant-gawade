@@ -12,6 +12,12 @@
             /* REQUIRED: Set the container to use Grid layout */
             display: grid;
             
+            /* FIX: Explicitly set box-sizing to content-box. This ensures that the 200px width 
+             * applies only to the content area, which is necessary for the 1fr tracks to 
+             * calculate correctly as 100px each, overriding any global border-box setting.
+             */
+            box-sizing: content-box;
+
             /* REQUIRED: Set the total size of the grid to 200px x 200px */
             width: 200px;
             height: 200px;
@@ -65,7 +71,7 @@
             <div class="item">4</div>
         </div>
 
-        <p class="text-gray-500 text-sm">Grid Total Size: 200px &times; 200px</p>
+        <p class="text-gray-500 text-sm">Grid Total Size: 200px &times; 200px (content area)</p>
     </div>
     
 </body>
